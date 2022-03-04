@@ -1,9 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+[data-theme="light"] {
+    --primary-color: white;
+    --font-color: black;
+}
+
+[data-theme="dark"] {
+    --primary-color: black;
+    --font-color: white;
+}
+
 body {
-    background: pink;
+    font-family: 'Titillium Web', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: var(--font-color);
+    
+    background: var(--primary-color);
+}
+
+a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 0.5em;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: var(--primary-color);
+}
+
+header div, span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header span {
+    margin-right: 0.5em;
+}
+
+nav {
+    position: fixed;
+    height: 100vh;
+    background: var(--primary-color);
+    width: 30vw;
+    right: 0;
+    transition: transform 0.8s;
+    color: white;
+    border-left: 1px solid black;
+    padding: 0.5em;
+    transform: translateX(30vw);
+}
+
+nav.visible {
+    transform: translateX(0);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+main {
+    padding: 1em;
+    background: var(--primary-color);
+}
+
+/* https://getbootstrap.com/docs/5.0/layout/breakpoints/ */
+@media screen and (min-width: 720px) {
+    main {
+        padding: 1em;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
