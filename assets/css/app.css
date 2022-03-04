@@ -60,7 +60,7 @@ nav {
     background: var(--primary-color);
     width: 30vw;
     right: 0;
-    transition: transform 0.8s;
+    transition: transform 0.3s;
     color: white;
     border-left: 1px solid black;
     padding: 0.5em;

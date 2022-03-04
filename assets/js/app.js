@@ -37,6 +37,14 @@ menuButton.addEventListener("click", () => {
 
 let currentTheme = "light"
 
+const savedTheme = localStorage.getItem("theme")
+
+if(savedTheme) {
+    currentTheme = savedTheme
+}
+
+document.documentElement.setAttribute('data-theme', currentTheme);
+
 document.getElementById("mode-switch").addEventListener("click", () => {
     if(currentTheme === "light") {
         currentTheme = "dark"
@@ -45,4 +53,5 @@ document.getElementById("mode-switch").addEventListener("click", () => {
         currentTheme = "light"
         document.documentElement.setAttribute('data-theme', 'light');
     }
+    localStorage.setItem("theme", currentTheme)
 })
